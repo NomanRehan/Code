@@ -37,9 +37,9 @@ for(int i=0;i<g;i++){
 
 
 
-void missing(int a[],int g){
+void missing(int a[],int g,int x){
     
-    for(int i=0;i<7;i++){
+    for(int i=0;i<x;i++){
         int f=0;
         for(int k=0;k<g;k++){
            if(a[k]==i){f++;}
@@ -54,26 +54,29 @@ void missing(int a[],int g){
 
 
 int main(){
-    int g,s=0;
+    int g,s=0,x;
     cout<<"set the limit of numbers ";
     cin>>g;
     int a[g];
 
 
-
-    cout<< "enter the numbers for array smaller than 7"<<endl;
+    cout<< "Select the upper limit of array entry"<<endl;
+    cin>>x;
+    x=x+1;
+    cout<< "enter the numbers for array smaller than "<<x<<endl;
     
+
     for(int i=0;i<g;i++){
         
         cin>>a[i];
 
-        if ((a[i]>=7))
+        if ((a[i]>=x))
         {
             while(s!=3){
                 cout<<i<<" place number is wrong "<<endl;
-                cout<<"plz enter number under 7 "<<endl;
+                cout<<"plz enter number under "<<x<<endl;
                 cin>>a[i];
-                if(a[i]<7){s=3;}
+                if(a[i]<x){s=3;}
             }
         }
         
@@ -83,7 +86,7 @@ int main(){
 
 
 dublicate(a,g);
-missing(a,g);
+missing(a,g,x);
 
 return 0;
 }
